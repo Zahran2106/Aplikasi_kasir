@@ -8,6 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
+        <link rel="shortcut icon" href="{{ asset('assets/img/shop.jpg') }}" type="image/x-icon">
         <title>Indocom</title>
 
         <!-- Custom fonts for this template-->
@@ -28,7 +29,7 @@
 
                 <!-- Sidebar - Brand -->
                 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                    <div class="sidebar-brand-text mx-3">Cafe Bisa Ngopi</div>
+                    <div class="sidebar-brand-text mx-3">Indokom</div>
                 </a>
 
                 <!-- Divider -->

@@ -7,48 +7,45 @@
             <li class="breadcrumb-item active" aria-current="page">Tambah Kategori</li>
         </ol>
     </nav>
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Tambah Kategori</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('kategori.index') }}"> Back</a>
-            </div>
-        </div>
-    </div>
 
-    <br>  
+    <br>
 
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-header text-center">
+            <h2>Tambah Kategori</h2>
         </div>
-    @endif
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         
-    <form action="{{ route('kategori.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Nama Kategori :</strong>
-                    <input type="text" name="nama_kategori" class="form-control" placeholder="Nama Kategori">
+        <form action="{{ route('kategori.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="card-body">
+                <div class="row">
+                    <div class="form-group">
+                        <strong>Nama Kategori :</strong>
+                        <input type="text" name="nama_kategori" class="form-control" placeholder="Nama Kategori">
+                    </div>
+                    <div class="form-group">
+                        <strong>Jumlah :</strong>
+                        <input type="text" name="jumlah" class="form-control" placeholder="Jumlah">
+                    </div>
+                    <div class="text-center">
+                        <a class="btn btn-outline-primary" href="{{ route('kategori.index') }}"> Kembali</a>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Jumlah :</strong>
-                    <input type="text" name="jumlah" class="form-control" placeholder="Jumlah">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </div>
-    </form>
+        </form>
+    </div>
+</div>
+
 @endsection
